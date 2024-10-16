@@ -46,7 +46,17 @@ struct OrderView: View {
                 TextField("enter number of pizza, ex: 2 ", text: $numPizza)
                     .keyboardType(.numberPad)
             }
+            
+            Button("Place Order"){
+                placeOrder()
+            }
+            
         }.padding()
+    }
+    
+    func placeOrder(){
+        // TODO: Validate user input, if valid navigate to next page, else: alert...
+        print("Order Placed")
     }
 }
 #Preview {
