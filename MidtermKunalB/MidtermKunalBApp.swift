@@ -11,7 +11,7 @@ import SwiftUI
 struct MidtermKunalBApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            OrderView()
         }
     }
 }

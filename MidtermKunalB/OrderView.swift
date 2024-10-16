@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct OrderView: View {
+    @State var name: String = ""
+    @State var numPizza: String = ""
     // list of sizes
     var sizes = ["Small", "Medium", "Large"]
     @State private var selectedSize = "Medium"
@@ -15,14 +17,9 @@ struct OrderView: View {
     @State private var pepperoni: Bool = true
     @State private var cheese = true
     @State private var olives: Bool = true
-    
-    
-    
-    
+
     var body: some View {
         
-        @State var name: String = ""
-        @State var numPizza: String = ""
         VStack{
             
             // TODO: Adjust styling later
@@ -41,7 +38,15 @@ struct OrderView: View {
             
             Toggle("Pepperoni", isOn: $pepperoni)
             Toggle("Cheese", isOn: $cheese)
-            Toggle("Olives", isOn: $olives)}
+            Toggle("Olives", isOn: $olives)
+            
+            // TODO: Add Styling
+            HStack{
+                Text("Number of Pizza: ")
+                TextField("enter number of pizza, ex: 2 ", text: $numPizza)
+                    .keyboardType(.numberPad)
+            }
+        }.padding()
     }
 }
 #Preview {
