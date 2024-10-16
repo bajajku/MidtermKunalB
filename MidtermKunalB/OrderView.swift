@@ -50,12 +50,12 @@ struct OrderView: View {
                         .keyboardType(.numberPad)
                 }
                 
-//                if
-                
-                NavigationLink(destination: SummaryView(name: name, pizza: Pizza(size: selectedSize, pepperoni: pepperoni, cheese: cheese, olives: olives, numPizzas: Int(numPizza) ?? 0))){
-                    Text("Wow")
-                        .font(.title)
-                }
+                if inputValidation(){
+                    
+                    NavigationLink(destination: SummaryView(name: name, pizza: Pizza(size: selectedSize, pepperoni: pepperoni, cheese: cheese, olives: olives, numPizzas: Int(numPizza) ?? 0))){
+                        Text("Wow")
+                            .font(.title)
+                    }}
                 
                 
             }.padding()
@@ -64,12 +64,14 @@ struct OrderView: View {
                 }
         }
     }
-//    func placeOrder(){
-//        // TODO: Validate user input, if valid navigate to next page, else: alert...
-//        if((Int(numPizza) ) == nil || Int(numPizza)! < 0){
-//            showAlert = !showAlert
-//        }
-//    }
+    func inputValidation() -> Bool{
+        // TODO: Validate user input, if valid navigate to next page, else: alert...
+        if((Int(numPizza) ) == nil || Int(numPizza)! < 0){
+            showAlert = !showAlert
+            return false
+        }
+        return true
+    }
 }
 #Preview {
     OrderView()
