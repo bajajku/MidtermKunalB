@@ -29,12 +29,22 @@ struct SummaryView: View {
     }
     
     var body: some View {
+        Text("Welcome to the Pizza Store!")
+            .font(.title)
+        Spacer()
         Text("Hi, \(name)!")
+            .font(.headline)
         Text("Your Order Details")
+            .font(.headline)
         Text("\(pizza.size) Pizza")
+            .font(.headline)
         Text("Topping: \(toppings())")
+            .font(.headline)
         Text("Quantity: \(pizza.numPizzas)")
-        Text("Total: \(pizza.totalPrice())")
+            .font(.headline)
+        Text("Total: \(pizza.totalPrice()) $")
+            .font(.headline)
+        Spacer()
     }
 }
 
